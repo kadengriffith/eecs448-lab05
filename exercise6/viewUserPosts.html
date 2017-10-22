@@ -8,7 +8,7 @@
 </head>
 <body>
 <?php
-$connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith"); // Establish connection
+$connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith");
 if($connection->connect_errno) {
 printf("Something went wrong: %s", $connection->connect_error);
 echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
@@ -16,9 +16,8 @@ exit();
 }
 $result = $connection->query("SELECT * FROM Posts");
 if($result->num_rows == 0) {
-echo "<h5>There are no posts...</h5>";
+echo "<h5>There are no posts to see...</h5>";
 echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
-echo "</body></html>";
 }else {
 echo "<h3>Select a user from the list below to view their posts</h3>";
 echo "<form action='viewUserPosts.php' method='post'><select name='choice' value='0'>";
@@ -30,6 +29,7 @@ echo "</select><br><button type='submit'>Submit</button>";
 }
 echo "</form>";
 $connection->close();
+echo "</body></html>";
 ?>
 </body>
 </html>
