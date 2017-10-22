@@ -5,9 +5,9 @@ $user = $_POST['choice']; // Pull user
 if($connection->connect_errno) {
 printf("Something went wrong: %s", $connection->connect_error);
 echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
-echo "</body></html>";
 exit();
 }
+if($user.value != 0) {
 $query = "SELECT * FROM Users WHERE username='" . $user . "'";
 $result = $connection->query($query);
 $row = $result->fetch_assoc();
@@ -20,6 +20,7 @@ echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>B
 echo "<h3>" . $user . "'s Posts:</h3>";
 while($row = $result->fetch_assoc()) {
 echo "<br>" . $row["content"] . "<br><br>";
+}
 }
 echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
 }

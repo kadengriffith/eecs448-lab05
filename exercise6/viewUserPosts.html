@@ -12,7 +12,6 @@ $connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgri
 if($connection->connect_errno) {
 printf("Something went wrong: %s", $connection->connect_error);
 echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
-echo "</body></html>";
 exit();
 }
 $result = $connection->query("SELECT * FROM Posts");
@@ -22,7 +21,7 @@ echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>B
 echo "</body></html>";
 }else {
 echo "<h3>Select a user from the list below to view their posts</h3>";
-echo "<form action='viewUserPosts.php' method='post'><select name='choice'>";
+echo "<form action='viewUserPosts.php' method='post'><select name='choice' value='0'>";
 $result = $connection->query("SELECT * FROM Users");
 while($row = mysqli_fetch_array($result)) {
 echo "<option value='" . $row['username'] . "'>" . $row['username'] . "</option>";
