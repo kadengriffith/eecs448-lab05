@@ -14,7 +14,7 @@ border-collapse: collapse;
 </head>
 <body>
 <?php
-$connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith"); // Establish connection
+$connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith");
 if($connection->connect_errno) {
 printf("Something went wrong: %s", $connection->connect_error);
 echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
@@ -32,7 +32,7 @@ $author_ = $connection->query("SELECT username FROM Users WHERE user_id='" . $ro
 $author = $author_->fetch_assoc();
 echo "<tr><td>" . $row['content'] . "</td><td>" . $author['username'] . "</td><td>" . "<input type='checkbox' name='" . $row['post_id'] . "'></input></td></tr>";
 }
-echo "</table><br><button type='submit'>Sumbit</button></form>";
+echo "</table><br><button type='submit'>Submit</button></form>";
 }
 $connection->close();
 ?>
