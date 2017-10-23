@@ -10,7 +10,7 @@
   <?php
     $connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith"); // Establish connection
     if($connection->connect_errno) {
-      printf("Connetion failed: %s", $connection->connect_error);
+      printf("Something went wrong: %s", $connection->connect_error);
       exit();
     }
     $result = $connection->query("SELECT * FROM Posts");
