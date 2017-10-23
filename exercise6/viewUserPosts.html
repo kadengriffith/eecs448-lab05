@@ -13,7 +13,8 @@
       printf("Something went wrong: %s", $connection->connect_error);
       exit();
     }
-    $result = $connection->query("SELECT * FROM Posts");
+    $query = "SELECT * FROM Posts";
+    $result = $connection->query($query);
     if($result->num_rows == 0) {
       echo "<h5>There are no posts...</h5>";
       echo "<br><br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
@@ -22,9 +23,9 @@
       echo "<form action='viewUserPosts.php' method='post'><select name='choice'>";
       $result = $connection->query("SELECT * FROM Users");
       while($row = mysqli_fetch_array($result)) {
-        echo "<option value='" . $row['username'] . "'>" . $row['username'] . "</option>";
+        echo "<option value="' . $row['username'] . '">" . $row['username'] . "</option>";
       }
-        echo "</select><br><br><button type='submit'>Submit</button>";
+      echo "</select><br><br><button type='submit'>Submit</button>";
     }
     echo "</form>";
     $connection->close();
