@@ -23,7 +23,7 @@
     if($result->num_rows == 0) {
       echo "<h5>There are no posts...</h5><br><br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
     }else {
-      echo "<form action='deletePost.php' method='post'>";
+      echo "<form action='deletePosts.php' method='post'>";
       echo "<table><th>Post</th><th>Author</th><th>Delete this?</th>";
       while($row = mysqli_fetch_array($result)) {
         $author_ = $userPosts_connection->query("SELECT username FROM Users WHERE user_id='" . $row['author_id'] . "'");
