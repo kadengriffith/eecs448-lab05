@@ -13,7 +13,7 @@
       echo "<br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
       exit();
     }
-    $query = "SELECT * FROM Users WHERE username=''" . $username;
+    $query = "SELECT * FROM Users WHERE username='" . $username . "'";
     $result = $post_connection->query($query);
     if($result->num_rows == 0) {
       echo "Error: " . $username . ", is not an existing username";
