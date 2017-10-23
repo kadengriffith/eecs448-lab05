@@ -12,7 +12,7 @@
   }else {
     echo "<h3>Current Users:</h3>";
     while($row = mysqli_fetch_array($result)) {
-      echo "<br><br>" . $row['username'];
+      echo "<br>" . $row['username'];
     }
   }
   $connection->close();
