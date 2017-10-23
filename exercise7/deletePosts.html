@@ -14,7 +14,7 @@
 </head>
 <body>
   <?php
-    $userPosts_connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith"); // Establish connection
+    $userPosts_connection = new mysqli("mysql.eecs.ku.edu", "kgriffith", 'P@$$word.123', "kgriffith");
     if($userPosts_connection->connect_errno) {
       printf("Something went wrong: %s", $userPosts_connection->connect_error);
       exit();

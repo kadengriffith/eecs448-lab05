@@ -26,4 +26,5 @@
     }
   }
   echo "<br><br><a style='text-decoration:none;color:#333;' href='../adminHome.html'>Back</a>";
+  $userPostsSub_connection->close();
 ?>
